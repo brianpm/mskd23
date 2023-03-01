@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7689511.svg)](https://doi.org/10.5281/zenodo.7689511)
+
 # mskd23
 Code supporting manuscript.
 
