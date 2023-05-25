@@ -11,6 +11,7 @@ Code supporting manuscript.
 - Figure 6: `combined_histogram_error_plot.ipynb`
 - Figures 7, 8, 9: `comparison_regimes.ipynb`
 - Figure 10: `combined_histogram_error_by_omega_plot.ipynb`
+- Figure 11: `composite_histograms_by_omega.ipynb`
 
 ## Ancillary Code
 - `computations.py`: Various utility functions including averaging, masking, time alignment, weighting, binned statistics, NMSE, EMD, COSP-specific layer cloud definitions, and dataclasses used in some notebooks.
