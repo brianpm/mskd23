@@ -136,6 +136,15 @@ def rm_land(dset, lf):
     return xr.where(lf <= 0, dset, np.nan)
 
 
+def kp_land(dset, lf):
+    """Return dset with np.nan where lf < 1."""
+    assert hasattr(dset, 'lat'), f'No lat in data set, {dset.coords = }'
+    assert len(dset['lat']) == len(lf['lat']), f"NO GOOD! data: {len(dset['lat'])}, land: {len(lf['lat'])}"
+    if np.count_nonzero(dset['lat'] == lf['lat']) != len(lf['lat']):
+        print(f"[rm_land] Latitudes mismatch. Largest discrepancy is {np.max(np.absolute(dset['lat'].values - lf['lat'].values))} degrees.")
+        lf = lf.assign_coords({"lat":dset["lat"], "lon":dset["lon"]})
+    return xr.where(lf >= 1, dset, np.nan)
+
 
 def get_land_ocean_avg(data, landmask, weights=None):
     land_data = xr.where(landmask > 0, data, np.nan)
